@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cats</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css"></style>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"></style>
+</head>
+<body>
+    <div class="container cats">
+        <hr color="whitesmoke">
+        <h1>Cats are cool too, I suppose</h1>
+        <hr color="whitesmoke">
+        <h3 class="b">Fat cat Pat, smokes that in a tophat</h3>
+        <% for (var x in cats) { %>
+            <img src="<%= cats[x].source %>">
+        <% } %>
+        <hr color="whitesmoke">
+    </div>
+</body>
+</html>

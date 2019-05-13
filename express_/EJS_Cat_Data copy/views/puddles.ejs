@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Puddles</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css"></style>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"></style>
+</head>
+<body>
+    <div class="container pic">
+        <h1>Detail Page for Puddles</h1>
+        <img src="<%= cat[0].source %>">
+        <% for (var x in cat) { %>
+            <h2>Name: <%= cat[x].name %> </h2>
+            <h2>Favorite Food: <%= cat[x].food %> </h2>
+            <h2>Spots:</h2>
+            <h3>
+                <% for (var y in cat[x].spots) { %>
+                    <%= cat[x].spots[y] %><br>
+                <% } %>
+            </h3>
+        <% } %>
+    </div>
+</body>
+</html>

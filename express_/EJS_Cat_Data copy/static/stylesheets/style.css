@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+    padding: 20px;
+    background-color: violet;
+}
+div.cats img{
+    width:32.9%;
+}
+div.pic img{
+    width:100%;
+}

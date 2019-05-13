@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cats</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css"></style>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"></style>
+</head>
+<body>
+    <div class="container cats">
+        <hr>
+        <h1>EJS cats - Pick a cat!</h1>
+        <% for (var x in cats) { %>
+            <a href="<%= cats[x].name %>"><img src="<%= cats[x].source %>"></a>
+        <% } %>
+    </div>
+</body>
+</html>

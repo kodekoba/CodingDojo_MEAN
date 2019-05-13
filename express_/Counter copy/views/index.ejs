@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h1>Counter</h1>
+        <h2><%= counter %> times</h2>
+        <form action="/plustwo" method="POST">
+            <input type="submit" value="Add Two" name="plustwo">
+        </form>
+        <form action="/reset" method="POST">
+            <input type="submit" value="Reset" name="reset">
+        </form>
+        <hr>
+    </div>
+</body>
+</html>

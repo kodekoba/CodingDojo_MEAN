@@ -1,0 +1,20 @@
+body{
+    background-color: lightgray;
+}
+h1{
+    text-align: center;
+}
+div.cars img{
+    width: 33%;
+}
+h3.b{
+    color: lightcyan;
+    text-align: center;
+}
+div.cats img{
+    width: 100%;
+}
+button{
+    width: 300px;
+    margin: 0px auto;
+}
