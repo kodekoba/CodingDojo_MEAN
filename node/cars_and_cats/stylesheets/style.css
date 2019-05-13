@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+h3.blue{
+    color:lightblue;
+}
+div.cars img{
+    width: 33%;
+}
+#wide{
+    width: 100%;
+}
+button{
+    padding: 5px;
+    margin: 0px auto;
+    width: 300px;
+}

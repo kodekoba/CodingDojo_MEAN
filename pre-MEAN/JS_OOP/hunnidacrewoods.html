@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hundred Acre Woods</title>
+    <script src="hundredacrewoods.js"></script>
+    <script>
+        var player = {
+            location: tigger,
+            hasHoney: false
+        };
+        var allLocations = [tigger, pooh, piglet, bees, owl, crob, rabbit, gopher, kanga, eeyore, heff];
+        var mission = {
+            location: allLocations[Math.floor(Math.random()*allLocations.length)]
+        };
+        function printLoc(){
+            console.log("You are now at " + player.location.character + "'s house.");
+            player.location.greet();
+        }
+        function move(dir){
+            if(dir == "north") {
+                player.location = player.location.north;
+                printLoc();
+            } else if(dir == "south") {
+                player.location = player.location.south;
+                printLoc();
+            } else if(dir == "west") {
+                player.location = player.location.west;
+                printLoc();
+            } else if(dir == "east") {
+                player.location = player.location.east;
+                printLoc();
+            } else {
+                console.log("Invalid command :<")
+            }
+        }
+        function pickUp(){
+            if(player.location == bees){
+                player.hasHoney = true;
+                console.log("You got some honey, honey! ;)")
+                newMission();
+            } else {
+                console.log("There's no honey here!")
+            }
+        }
+        function newMission(){
+            currentMission = mission;
+            console.log(mission.location.character + " is looking for honey. Can you help? nwn");
+        }
+        function drop(){
+            if(player.hasHoney == false){
+                console.log("You don't have any honey!!");
+            } else if(player.location == currentMission.location){
+                console.log("You delivered the honey to " + player.location.character + "!");
+                player.hasHoney = false;
+            } else {
+                console.log(player.location.character + " didn't request any honey, silly :3")
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
