@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>One To Many - Messages to Comments</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css"></style>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"></style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Dojo Message Board</h1>
+        <hr>
+        <form action="/message" method="POST">
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Insert name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="content" class="col-sm-2 col-form-label">Message:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="content" name="content" placeholder="Insert message">
+                </div>
+            </div>
+            <hr color="whitesmoke">
+            <div class="form-group row">
+                    <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+        </form>
+        <hr>
+        <% for (var x of messages_info){ %>
+            <h2>Name: <%= x.name %></h2>
+            <h2>Message: <%= x.content %></h2>
+            <form action="/comment/<%= x._id %>" method="POST">
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Insert name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="content" class="col-sm-2 col-form-label">Comment:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="content" name="content" placeholder="Insert comment">
+                    </div>
+                </div>
+                <hr color="whitesmoke">
+                <div class="form-group row">
+                        <button type="submit" class="btn btn-info">Comment</button>
+                </div>
+            </form>
+            <div class="commentlist">
+                <% for (var y of x.comments) { %>
+                    <h4>Name: <%= y.name %></h4>
+                    <h4>Comment: <%= y.content %></h4>
+                    <br>
+                <% } %>
+            </div>
+            <hr>
+        <% } %>
+    </div>
+</body>
+</html>

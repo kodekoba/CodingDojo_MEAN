@@ -1,0 +1,13 @@
+div.login{
+    width: 40%;
+    display: inline-block;
+    margin-left: 50px;
+}
+div.regi{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+h4{
+    float: right;
+}

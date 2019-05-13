@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/users" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name"/>
+        <label>Age:</label>
+        <input type="number" name="age"/>
+        <button type="submit">Submit</button>
+    </form>
+    <% for (var i in user_info){ %>
+        <h2>Name: <%= user_info[i].name %>, Age: <%= user_info[i].age %></h2>
+    <% } %>
+</body>
+</html>

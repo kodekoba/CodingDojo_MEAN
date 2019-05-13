@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css"></style>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"></style>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h1>Login and Registration!</h1>
+        <hr>
+        <div class="regi">
+            <form method='post' action='/registration'>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">First Name:</label>
+                    <input type='text' class="form-control" name='first_name'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Last Name:</label>
+                    <input type='text' class="form-control" name='last_name'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Email:</label>
+                    <input type='email' class="form-control" name='email'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Password:</label>
+                    <input type='password' class="form-control" name='password'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Birthday:</label>
+                    <input type='date' class="form-control" name='birthday'>
+                </div>
+                <div class="form-group row">
+                        <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="login">
+            <form method='post' action='/login'>
+                <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Email:</label>
+                        <input type='email' class="form-control" name='email'>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Password:</label>
+                        <input type='password' class="form-control" name='password'>
+                    </div>
+                    <div class="form-group row">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+orm to check out: https://loopback.io/
+
+to start mongo server, go to terminal:
+    $ mongod    [or if errors]
+    $ sudo mongod
+to stop the mongo server:
+    $ ps -ax | grep mongo
+    $ sudo kill {first_mongo_number}
+to access the database to add/remove/edit:
+    $ mongo
+to exit:
+    $ exit
+

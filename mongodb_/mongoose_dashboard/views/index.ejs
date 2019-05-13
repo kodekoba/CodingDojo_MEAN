@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Foxes</title>
+</head>
+<body>
+    <h1>Fox List:</h1>
+    <% for (var i in foxes_info){ %>
+        <h2><a href="/foxes/<%= foxes_info[i]._id %>">Name: <%= foxes_info[i].name %></a>, Age: <%= foxes_info[i].age %> | <a href="/foxes/edit/<%= foxes_info[i]._id %>">Edit</a> | <a href="/foxes/destroy/<%= foxes_info[i]._id %>">Delete</a></h2>
+    <% } %>
+    <hr>
+    <h3><a href="/foxes/new">Add a Fox C:</a></h3>
+</body>
+</html>

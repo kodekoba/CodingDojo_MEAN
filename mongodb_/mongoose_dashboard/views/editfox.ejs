@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/foxes/<%= foxes_info[0]._id %>" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= foxes_info[0].name %>"/>
+        <label>Age:</label>
+        <input type="number" name="age" value="<%= foxes_info[0].age %>"/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
