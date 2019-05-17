@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+}
+div.submitacake{
+    display: inline-block;
+    margin: 0px 35%;
+}
+    div.submitacake h3{
+        text-align: center;
+    }
+div.scrollable{
+    display: inline-block;
+    width: 49%;
+    height: 650px;
+    overflow-y: auto;
+    vertical-align: top;
+    outline: 2px solid salmon;
+}
+    div.allcakes{
+        display: inline-block;
+        margin-left: 20px;
+    }
+div.selectedcake{
+    display: inline-block;
+    padding: 10px;
+    width: 45%;
+    vertical-align: top;
+    outline: 2px solid green;
+}

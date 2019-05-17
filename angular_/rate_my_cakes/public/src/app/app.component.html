@@ -1,0 +1,53 @@
+<div class="container">
+  <hr>
+  <h1>Rate My Cakes</h1>
+  <hr>
+  <div class="submitacake">
+    <h3>Submit a cake to be rated</h3>
+    <form (submit)="onSubmitCake()">
+      <!-- <p>{{newCake | json}}</p> -->
+      <label>Baker name:
+        <input type="text" name="newCake.name" [(ngModel)]="newCake.name" />
+      </label>
+      <label>Image URL:
+        <input type="text" name="newCake.image" [(ngModel)]="newCake.image" />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  <hr>
+  <div class="scrollable">
+    <div class="allcakes" *ngFor="let cake of cakes">
+      <!-- Have each image make all the reviews for that cake show up  -->
+      <img (click)="getThisCakeFromService(cake)" [src]="cake.image" alt="image_url_broken" width="500px">
+      <form (submit)="onSubmitReview(cake)">
+        <!-- <p>{{newReview | json}}</p> -->
+        <label>Rating:
+          <select name="newReview.rating" [(ngModel)]="newReview.rating" >
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Stars</option>
+          </select>
+        </label><br>
+        <label>Comment:
+          <input type="text" name="newReview.comment" [(ngModel)]="newReview.comment" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+      <br>
+    </div>
+  </div>
+  <div *ngIf="showThisCake" class="selectedcake">
+    <h2>Baked by {{thisCake.name}}</h2>
+    <img [src]="thisCake.image" alt="image_url_broken" width="300px">
+    <h2>Average Rating: {{avgRating}}</h2>
+    <div *ngFor="let review of reviews">
+      <h3>{{review.comment}}</h3>
+      <h3>{{review.rating}} stars</h3>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
