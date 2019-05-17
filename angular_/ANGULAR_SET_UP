@@ -1,0 +1,20 @@
+create project folder
+VSCode terminal>
+    create server.js
+    npm install express
+    npm install body-parser
+    npm install mongoose
+    npm install fs
+    //npm install express-session if needed
+create angular project/ side terminal
+    nav to project folder
+    ng new public
+    cd public
+    ng build --watch
+create routes/controller/models/mongoose .js files
+create service
+    nav to the angular app in the VSCode terminal
+    ng g s http
+register the service
+    instructions in the platform: Angular>Fetch Data
+    basically just referencing your new files
