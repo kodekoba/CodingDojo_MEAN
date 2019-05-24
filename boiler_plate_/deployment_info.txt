@@ -1,0 +1,24 @@
+create a gitignore
+$    touch .gitignore
+add to the file / use cmd shift . if the file is hidden
+    .DS_Store
+    .idea
+    .vagrant
+    bootstrap.sh
+    VagrantFile
+    bower_components/
+    node_modules
+    package-lock.json
+off to github / nav to the project folder then
+$   git init
+$   git add --all
+$   git commit -m "initial commit"
+$   git remote add origin https://github.com/kodekoba/boiler_plate.git
+$   git push -u origin master
+
+set up AWS
+
+copy paste later>>
+sudo ln -s /etc/nginx/sites-available/boiler_plate /etc/nginx/sites-enabled/boiler_plate
+
+sudo chown -R ubuntu boiler_plate
