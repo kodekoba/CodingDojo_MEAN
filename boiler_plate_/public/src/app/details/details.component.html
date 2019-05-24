@@ -1,0 +1,35 @@
+<h1>{{shownParent[0].name}}</h1>
+<h2>{{shownParent[0].image}}</h2>
+<h2>Average: {{shownParent.avg.toFixed(2)}}</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rating</th>
+      <th>Comment</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let child of shownParent[0].childs">
+      <td>{{child.rating}} Stars</td>
+      <td>{{child.comment}}</td>
+      <td>
+        <button type="button" class="btn btn-danger" (click) = "onDelete(child)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form (submit)="onSubmit()">
+    <label>Rating</label>
+    <select name="newChild.rating" [(ngModel)]="newChild.rating">
+      <option value="5">5 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="2">2 Stars</option>
+      <option value="1">1 Stars</option>
+    </select>
+    <label>Comment</label>
+    <textarea name="newChild.comment" [(ngModel)]="newChild.comment"></textarea>
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,10 @@
+<form (submit)="onSubmit()">
+    <p>{{editingParent | json}}</p>
+    <label>Name:</label>
+    <input type="text" name="editingParent.name" [(ngModel)] = "editingParent.name" [value]="editingParent.name">
+    <label>Image URL:</label>
+    <input type="text" name="editingParent.image" [(ngModel)] = "editingParent.image" [value]="editingParent.image">
+  
+    <button type="submit" [disabled]="editingParent.name.length < 1 || editingParent.image.length < 1">Submit</button>
+  </form>
+  <button [routerLink] = "['/p']">Cancel</button>

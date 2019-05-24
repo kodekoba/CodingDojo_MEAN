@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Parent</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let parent of listOfParents">
+      <th>{{parent.name}}</th>
+      <td>
+        <button type="button" class="btn btn-info" (click) = "onSelect(parent)">Select This Child</button>
+        <button type="button" class="btn btn-info" (click) = "onShow(parent)">Show Details</button>
+        <button type="button" class="btn btn-info" (click) = "onEdit(parent)">Edit</button>
+        <button type="button" class="btn btn-danger" (click) = "onDelete(parent)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-child *ngIf="selectedParent != null" [childVariable] = "selectedParent" (childOutputVariable)="ReceivedChildMessage($event)"></app-child>

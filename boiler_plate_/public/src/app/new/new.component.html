@@ -1,0 +1,27 @@
+<!-- sample of back end validation from component. make sure variables are defined and the message is keyed correctly on the maincontroller (dictionary key and custom string. if model doesnt contain requirements this will never show) -->
+<!-- <p *ngIf="errorMessage.length > 0">{{errorMessage}}</p> -->
+<!-- sample of front end validation from component (be sure boolean is defined in component and triggered on submit function) -->
+<!-- <p *ngIf="errorBoolean == true">Your name must be at least 3 characters long</p> -->
+<!-- sample of real time validation -->
+<!-- <p *ngIf="newParent.name.length >= 1 && newParent.name.length < 3">Your name must be at least 3 characters</p> -->
+
+<form (submit)="onSubmit()">
+  <label>Name:</label>
+  <input type="text" name="newParent.name" [(ngModel)] = "newParent.name">
+  <label>Image URL:</label>
+  <input type="text" name="newParent.image" [(ngModel)] = "newParent.image">
+
+  <!-- uncomment area below if you want a child to be created for the parent upon initialization (ex: a rating to be created upon product creation)  -->
+  <!-- <label>Rating:</label>
+  <select name="newChild.rating" [(ngModel)]="newChild.rating">
+    <option value="5">5 Stars</option>
+    <option value="4">4 Stars</option>
+    <option value="3">3 Stars</option>
+    <option value="2">2 Stars</option>
+    <option value="1">1 Stars</option>
+  </select>
+  <label>Comment</label>
+  <textarea name="newChild.comment" [(ngModel)]="newChild.comment"></textarea> -->
+  <button type="submit" [disabled]="newParent.name.length < 3 || newParent.image.length < 3">Submit</button>
+</form>
+<button [routerLink] = "['/p']">Cancel</button>
